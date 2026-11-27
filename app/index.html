@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DealHunt — Black Friday Deal Finder</title>
+<meta name="description" content="Real Black Friday and Cyber Monday deals, checked at the store on Nov 27, 2026. Search by product, filter by category, store and discount.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <p class="brand"><a href="#/">DealHunt</a></p>
+    <p class="tagline">Black Friday &amp; Cyber Monday deals, checked at the store — not guessed.</p>
+    <p class="checked-note">Every price below was read from the store's own product page on Nov 27, 2026. Prices move fast on Black Friday week; confirm at the store before you buy.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="list-view">
+    <div id="stats"></div>
+
+    <form class="controls" id="controls" onsubmit="return false">
+      <label class="ctl search-ctl">Search
+        <input id="search" type="search" placeholder="Try “headphones”, “LEGO”, “TV”…">
+      </label>
+      <label class="ctl">Category
+        <select id="category"></select>
+      </label>
+      <label class="ctl">Store
+        <select id="store"></select>
+      </label>
+      <label class="ctl">Min. discount
+        <select id="min-discount">
+          <option value="0">Any discount</option>
+          <option value="30">30% off or more</option>
+          <option value="40">40% off or more</option>
+          <option value="50">50% off or more</option>
+        </select>
+      </label>
+      <label class="ctl">Sort by
+        <select id="sort">
+          <option value="discount">Biggest discount</option>
+          <option value="saved">Biggest saving ($)</option>
+          <option value="price-low">Lowest price</option>
+          <option value="price-high">Highest price</option>
+        </select>
+      </label>
+    </form>
+
+    <p id="count" class="count" role="status"></p>
+    <div id="grid" class="grid"></div>
+  </section>
+
+  <section id="detail-view" hidden></section>
+</main>
+
+<footer class="wrap foot">
+  <p>DealHunt is an independent deal finder. Prices were read from Walmart.com, BestBuy.com, Target.com and Ring.com product pages on Nov 27, 2026; each deal lists its source. Store names belong to their owners. Deal links open the store's own product page in a new tab.</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="views.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
